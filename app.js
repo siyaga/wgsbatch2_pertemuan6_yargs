@@ -1,4 +1,6 @@
-0
+
+    const { argv } = require('process')
+const contact = require('./contact')
 // Memanggil Yargs
 const yargs = require("yargs");
 
@@ -7,7 +9,7 @@ yargs.command({
     command:'add',
     describe:'add new contact',
     builder:{
-        //membuat isi array deksripsinya
+        //membuat isi Objek deksripsinya
         // Membuat nama
         name: {
             describe:'Contact name',
@@ -30,18 +32,21 @@ yargs.command({
     },
     //Memanggil yargs
     handler(argv){
-        //membuat array contact yang akan di isi oleh isi yargs tadi di atas
-        const contact = {
-            name: argv.name,
-            email: argv.email,
-            mobile: argv.mobile,
-        };
-        //Menampilkan array yang sudah di inputkan
-        console.log(contact);
+
+        contact.saveIsiData(argv.name,argv.mobile,argv.email);
+        //membuat Objek contact yang akan di isi oleh isi yargs tadi di atas
+        // const contact = {
+        //     name: argv.name,
+        //     email: argv.email,
+        //     mobile: argv.mobile,
+        // };
+        //Menampilkan Objek yang sudah di inputkan
+        // console.log(contact);
     },
 });
 // Menjalankan yargs utama
 yargs.parse();
+   
 
 
 
