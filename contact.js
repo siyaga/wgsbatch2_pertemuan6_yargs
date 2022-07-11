@@ -55,7 +55,7 @@ const namaDuplikat = contacts.find((contact) => contact.name.toLowerCase() === n
 
 //Menambahkan validasi untuk nomor telephone
 if(!validator.isMobilePhone(mobile, 'id-ID')){
-  return console.log("Nomor Telephone Yang anda Masukan Salah!!, Pastikan Format nomor sesuai.")
+  return console.log("Nomor Telephone Yang anda Masukan Salah!!, Pastikan Format nomor sesuai.");
 
 }else
 //Menambahkan validasi untuk email
