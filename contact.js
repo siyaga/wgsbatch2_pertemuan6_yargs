@@ -53,9 +53,8 @@ const contacts =JSON.parse(file);
 const namaDuplikat = contacts.find((contact) => contact.name === name);
 if(namaDuplikat){
     //Menampilkan jika nilai true bila sama namanya maka munculkan nama sudah digunakan
-    console.log("Nama sudah digunakan, silakan ganti nama lain");
     //agar error berhenti disini
-    return false;
+    return  console.log("Nama sudah digunakan, silakan ganti nama lain");
 }
 contacts.push(contact);
 fs.writeFileSync('data/contacts.json', JSON.stringify(contacts));
