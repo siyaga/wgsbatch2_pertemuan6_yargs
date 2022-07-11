@@ -32,8 +32,19 @@ yargs.command({
     },
     //Memanggil yargs
     handler(argv){
+        // const nameDuplicate = (obj, colname) => {
+        //     const hash = Object.create(null);
+        //     return obj.some((arr) => {
+        //         return arr[colname] && (hash[arr[colname]] || (hash[arr[colname]] = true));
+        //     });
+        // };
 
-        contact.saveIsiData(argv.name,argv.mobile,argv.email);
+        
+
+            contact.saveIsiData(argv.name,argv.mobile,argv.email);
+            
+        
+        
         //membuat Objek contact yang akan di isi oleh isi yargs tadi di atas
         // const contact = {
         //     name: argv.name,

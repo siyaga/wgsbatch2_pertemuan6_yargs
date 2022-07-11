@@ -3,10 +3,10 @@ const fs = require('fs');
 const readline = require('readline');
 
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
 
 const questions = (ask) => {
 
@@ -49,11 +49,19 @@ periksaFile();
 const contact = {name, mobile, email};
 const file = fs.readFileSync('data/contacts.json', 'utf8');
 const contacts =JSON.parse(file);
+// Membuat Jika Nama duplikat
+const namaDuplikat = contacts.find((contact) => contact.name === name);
+if(namaDuplikat){
+    //Menampilkan jika nilai true bila sama namanya maka munculkan nama sudah digunakan
+    console.log("Nama sudah digunakan, silakan ganti nama lain");
+    //agar error berhenti disini
+    return false;
+}
 contacts.push(contact);
 fs.writeFileSync('data/contacts.json', JSON.stringify(contacts));
 console.log("Terima Kasih sudah memasukkan data!");
 
-rl.close();
+// rl.close();
 }
 
 
