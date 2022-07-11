@@ -50,7 +50,7 @@ const contact = {name, mobile, email};
 const file = fs.readFileSync('data/contacts.json', 'utf8');
 const contacts =JSON.parse(file);
 // Membuat Jika Nama duplikat
-const namaDuplikat = contacts.find((contact) => contact.name === name);
+const namaDuplikat = contacts.find((contact) => contact.name.toLowerCase() === name.toLowerCase());
 if(namaDuplikat){
     //Menampilkan jika nilai true bila sama namanya maka munculkan nama sudah digunakan
     //agar error berhenti disini
